@@ -33,50 +33,51 @@
 
 const hardfork_t mainnet_hard_forks[] = {
   // version 1 from the start of the blockchain
-  { 1, 1, 0, 1341378000 },
+  { 1, 1, 0, 1650575848 },
 
   // version 2 starts from block 1009827, which is on or around the 20th of March, 2016. Fork time finalised on 2015-09-20. No fork voting occurs for the v2 fork.
-  { 2, 1009827, 0, 1442763710 },
+  { 2, 2, 0, 1650575849 },
 
   // version 3 starts from block 1141317, which is on or around the 24th of September, 2016. Fork time finalised on 2016-03-21.
-  { 3, 1141317, 0, 1458558528 },
+  { 3, 3, 0, 1650575877 },
 
   // version 4 starts from block 1220516, which is on or around the 5th of January, 2017. Fork time finalised on 2016-09-18.
-  { 4, 1220516, 0, 1483574400 },
+  { 4, 4, 0, 1650575887 },
 
   // version 5 starts from block 1288616, which is on or around the 15th of April, 2017. Fork time finalised on 2017-03-14.
-  { 5, 1288616, 0, 1489520158 }, 
+  { 5, 5, 0, 1650575894 },
 
   // version 6 starts from block 1400000, which is on or around the 16th of September, 2017. Fork time finalised on 2017-08-18.
-  { 6, 1400000, 0, 1503046577 },
+  { 6, 6, 0, 1650575898 },
 
   // version 7 starts from block 1546000, which is on or around the 6th of April, 2018. Fork time finalised on 2018-03-17.
-  { 7, 1546000, 0, 1521303150 },
+  { 7, 7, 0, 1650575903 },
 
   // version 8 starts from block 1685555, which is on or around the 18th of October, 2018. Fork time finalised on 2018-09-02.
-  { 8, 1685555, 0, 1535889547 },
+  { 8, 8, 0, 1650575907 },
 
   // version 9 starts from block 1686275, which is on or around the 19th of October, 2018. Fork time finalised on 2018-09-02.
-  { 9, 1686275, 0, 1535889548 },
+  { 9, 9, 0, 1650575917 },
 
   // version 10 starts from block 1788000, which is on or around the 9th of March, 2019. Fork time finalised on 2019-02-10.
-  { 10, 1788000, 0, 1549792439 },
+  { 10, 10 0, 1650575917 },
 
   // version 11 starts from block 1788720, which is on or around the 10th of March, 2019. Fork time finalised on 2019-02-15.
-  { 11, 1788720, 0, 1550225678 },
+  { 11, 11, 0, 1650575927 },
 
   // version 12 starts from block 1978433, which is on or around the 30th of November, 2019. Fork time finalised on 2019-10-18.
-  { 12, 1978433, 0, 1571419280 },
+  { 12, 12, 0, 1650575801 },
 
-  { 13, 2210000, 0, 1598180817 },
-  { 14, 2210720, 0, 1598180818 },
+  { 13, 13, 0, 1650575801 },
+  { 14, 14, 0, 1650575801 },
 
-  { 15, 8000000, 0, 1608223241 }, // temp so tests test with these consensus rules
-  { 16, 8000001, 0, 1608223242 }, // temp so tests test with these consensus rules
+  { 15, 15, 0, 1650575801 }, // temp so tests test with these consensus rules
+  { 16, 16, 0, 1650575801 }, // temp so tests test with these consensus rules
 };
 const size_t num_mainnet_hard_forks = sizeof(mainnet_hard_forks) / sizeof(mainnet_hard_forks[0]);
-const uint64_t mainnet_hard_fork_version_1_till = 1009826;
+const uint64_t mainnet_hard_fork_version_1_till = 1;
 
+// AAAA I AM NOT GONNA DO THIS I AM LAZYWUEFJEFM
 const hardfork_t testnet_hard_forks[] = {
   // version 1 from the start of the blockchain
   { 1, 1, 0, 1341378000 },
