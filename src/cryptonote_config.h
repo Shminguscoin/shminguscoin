@@ -221,7 +221,7 @@ namespace config
   boost::uuids::uuid const NETWORK_ID = { {
       0x42, 0x75, 0x6E, 0x6B, 0x65, 0x72, 0x63, 0x6F, 0x69, 0x6E, 0x74, 0x6F, 0x20, 0x6D, 0x6F, 0x6E // mon = moon. 100% not ANSI, 100%...
     } }; // Bender's nightmare
-  std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121014a7a340fbdf85f74e078367e1a8fb7d0cf0596fc2723d904f7e6bedd050d4a5a";
+  std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";
   uint32_t const GENESIS_NONCE = 420;
 
   // Hash domain separators
