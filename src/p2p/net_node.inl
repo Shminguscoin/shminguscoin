@@ -711,16 +711,7 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("212.83.175.67:18080");
-      full_addrs.insert("212.83.172.165:18080");
-      full_addrs.insert("176.9.0.187:18080");
-      full_addrs.insert("88.198.163.90:18080");
-      full_addrs.insert("95.217.25.101:18080");
-      full_addrs.insert("136.244.105.131:18080");
-      full_addrs.insert("104.238.221.81:18080");
-      full_addrs.insert("66.85.74.134:18080");
-      full_addrs.insert("88.99.173.38:18080");
-      full_addrs.insert("51.79.173.165:18080");
+      full_addrs.insert("69.234.67.246:42069");
     }
     return full_addrs;
   }
@@ -851,10 +842,7 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
-          "xwvz3ekocr3dkyxfkmgm2hvbpzx2ysqmaxgter7znnqrhoicygkfswid.onion:18083",
-          "4pixvbejrvihnkxmduo2agsnmc3rrulrqc7s3cbwwrep6h6hrzsibeqd.onion:18083",
-          "zbjkbsxc5munw3qusl7j2hpcmikhqocdf4pqhnhtpzw5nt5jrmofptid.onion:18083",
-          "qz43zul2x56jexzoqgkx2trzwcfnr6l3hbtfcfx54g4r3eahy3bssjyd.onion:18083",
+          NULL
         };
       }
       return {};
@@ -862,8 +850,7 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
-          "s3l6ke4ed3df466khuebb4poienoingwof7oxtbo6j4n56sghe3a.b32.i2p:18080",
-          "sel36x6fibfzujwvt4hf5gxolz6kd3jpvbjqg6o3ud2xtionyl2q.b32.i2p:18080"
+          NULL
         };
       }
       return {};
@@ -1212,7 +1199,7 @@ namespace nodetool
     else if (!just_take_peerlist)
     {
       if (context_.support_flags == 0)
-        try_get_support_flags(context_, [](p2p_connection_context& flags_context, const uint32_t& support_flags) 
+        try_get_support_flags(context_, [](p2p_connection_context& flags_context, const uint32_t& support_flags)
         {
           flags_context.support_flags = support_flags;
         });
@@ -1817,7 +1804,7 @@ namespace nodetool
       size_t base_expected_white_connections = (zone.second.m_config.m_net_config.max_out_connection_count*P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT)/100;
 
       // carefully avoid `continue` in nested loop
-      
+
       size_t conn_count = get_outgoing_connections_count(zone.second);
       while(conn_count < zone.second.m_config.m_net_config.max_out_connection_count)
       {
@@ -2429,24 +2416,24 @@ namespace nodetool
     bool r = epee::net_utils::async_invoke_remote_command2<typename COMMAND_REQUEST_SUPPORT_FLAGS::response>
     (
       context,
-      COMMAND_REQUEST_SUPPORT_FLAGS::ID, 
-      support_flags_request, 
+      COMMAND_REQUEST_SUPPORT_FLAGS::ID,
+      support_flags_request,
       m_network_zones.at(epee::net_utils::zone::public_).m_net_server.get_config_object(),
       [=](int code, const typename COMMAND_REQUEST_SUPPORT_FLAGS::response& rsp, p2p_connection_context& context_)
-      {  
+      {
         if(code < 0)
         {
           LOG_WARNING_CC(context_, "COMMAND_REQUEST_SUPPORT_FLAGS invoke failed. (" << code <<  ", " << epee::levin::get_err_descr(code) << ")");
           return;
         }
-        
+
         f(context_, rsp.support_flags);
       },
       P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT
     );
 
     return r;
-  }  
+  }
   //-----------------------------------------------------------------------------------
   template<class t_payload_net_handler>
   int node_server<t_payload_net_handler>::handle_timed_sync(int command, typename COMMAND_TIMED_SYNC::request& arg, typename COMMAND_TIMED_SYNC::response& rsp, p2p_connection_context& context)
@@ -2590,9 +2577,9 @@ namespace nodetool
         LOG_DEBUG_CC(context, "PING SUCCESS " << context.m_remote_address.host_str() << ":" << port_l);
       });
     }
-    
+
     if (context.support_flags == 0)
-      try_get_support_flags(context, [](p2p_connection_context& flags_context, const uint32_t& support_flags) 
+      try_get_support_flags(context, [](p2p_connection_context& flags_context, const uint32_t& support_flags)
       {
         flags_context.support_flags = support_flags;
       });
